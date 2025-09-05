@@ -1,0 +1,15 @@
+Requirements
+
+torch
+
+torchaudio
+
+matplotlib
+
+numpy
+
+scipy
+
+Install with:
+
+pip install torch torchaudio matplotlib numpy scipy
