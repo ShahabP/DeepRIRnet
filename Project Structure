@@ -1,0 +1,17 @@
+DeepRIRNet/
+│
+├── data/
+│   └── dataset.py        # Dataset and DataLoader
+│
+├── models/
+│   └── deep_rir_net.py   # Model definition
+│
+├── utils/
+│   ├── rir_generator.py  # Synthetic RIR generation
+│   ├── regularizers.py   # Physics-inspired regularizers
+│   └── losses.py         # Hybrid loss function
+│
+├── train.py              # Training loop
+├── main.py               # Entry point (dataset creation, training, fine-tuning, evaluation)
+├── requirements.txt      # Dependencies
+└── README.md             # Documentation
