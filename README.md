@@ -1,47 +1,38 @@
-pip install torch torchaudio matplotlib numpy scipy
+# DeepRIRNet
 
-▶️ Usage
+PyTorch implementation of DeepRIRNet (geometry-aware RIR prediction) following the corrected paper version.
 
-To train the model and run evaluation:
+Features:
+- Geometry-aware input projection → temporal embedding via MLP + learnable time-basis
+- Two-layer LSTM decoder
+- Loss = alpha*MSE + beta*LSD + lambda1*NormalizedEarlyL1 + lambda2*DecayPenalty
+- Pretraining + fine-tuning utilities
 
-python main.py
-
-
-
-
----
-
-## ⚙️ Installation
-
-Clone the repository and install requirements:
+## Installation
 
 ```bash
-git clone https://github.com/yourusername/DeepRIRNet.git
+git clone <repo_url>
 cd DeepRIRNet
 pip install -r requirements.txt
 
 
-
-# DeepRIRNet
-
-DeepRIRNet is a PyTorch implementation for generating and predicting room impulse responses (RIRs) using deep recurrent neural networks with physics-inspired regularizers.
-
 ---
 
 DeepRIRNet/
-│
-├── data/
-│ └── dataset.py # Dataset class
-│
-├── models/
-│ └── deep_rir_net.py # Neural network model
-│
-├── utils/
-│ ├── rir_generator.py # Synthetic RIR generation
-│ ├── regularizers.py # Physics-inspired regularizers
-│ └── losses.py # Hybrid loss function
-│
-├── train.py # Training loop
-├── main.py # Main entry point (dataset creation, training, evaluation)
-├── requirements.txt # Dependencies
-└── README.md # Documentation
+├── README.md
+├── requirements.txt
+├── setup.py
+├── deep_rirnet/
+│   ├── __init__.py
+│   ├── dataset.py
+│   ├── model.py
+│   ├── losses.py
+│   ├── train.py
+│   └── utils.py
+└── examples/
+    └── run_dummy.py
+
+
+
+python examples/run_dummy.py
+
