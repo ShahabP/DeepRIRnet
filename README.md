@@ -1,6 +1,6 @@
 # DeepRIRNet
 
-PyTorch implementation of DeepRIRNet (geometry-aware RIR prediction) following the corrected paper version.
+PyTorch implementation of DeepRIRNet (geometry-aware RIR prediction).
 
 Features:
 - Geometry-aware input projection → temporal embedding via MLP + learnable time-basis
