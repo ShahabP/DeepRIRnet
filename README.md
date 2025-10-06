@@ -11,7 +11,7 @@ Features:
 ## Installation
 
 ```bash
-git clone <repo_url>
+git clone https://github.com/ShahabP/DeepRIRnet.git
 cd DeepRIRNet
 pip install -r requirements.txt
 
