@@ -1,38 +1,13 @@
-# DeepRIRNet
+# DeepRIRNet — geometry-aware Room Impulse Response prediction
 
-PyTorch implementation of DeepRIRNet (geometry-aware RIR prediction).
+This repository implements **DeepRIRNet**, a geometry-aware transfer-learning model for Room Impulse Response (RIR) estimation (paper attached). The model factorizes a geometry encoder and a temporal decoder (two-layer LSTM) and uses physics-informed losses (sparsity + energy decay) during training for realistic RIRs.
 
-Features:
-- Geometry-aware input projection → temporal embedding via MLP + learnable time-basis
-- Two-layer LSTM decoder
-- Loss = alpha*MSE + beta*LSD + lambda1*NormalizedEarlyL1 + lambda2*DecayPenalty
-- Pretraining + fine-tuning utilities
+Paper: *A Novel Transfer Learning Approach for Room Impulse Response Estimation...* (see `paper/RIRTransfer.pdf`). :contentReference[oaicite:1]{index=1}
 
-## Installation
+## Quick start
 
+1. Create a virtual env and install
 ```bash
-git clone https://github.com/ShahabP/DeepRIRnet.git
-cd DeepRIRNet
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-
-
----
-
-DeepRIRNet/
-├── README.md
-├── requirements.txt
-├── setup.py
-├── deep_rirnet/
-│   ├── __init__.py
-│   ├── dataset.py
-│   ├── model.py
-│   ├── losses.py
-│   ├── train.py
-│   └── utils.py
-└── examples/
-    └── run_dummy.py
-
-
-
-python examples/run_dummy.py
-
