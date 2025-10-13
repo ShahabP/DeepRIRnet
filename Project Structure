@@ -1,17 +1,98 @@
-DeepRIRNet/
-│
-├── data/
-│   └── dataset.py        # Dataset and DataLoader
-│
-├── models/
-│   └── deep_rir_net.py   # Model definition
-│
-├── utils/
-│   ├── rir_generator.py  # Synthetic RIR generation
-│   ├── regularizers.py   # Physics-inspired regularizers
-│   └── losses.py         # Hybrid loss function
-│
-├── train.py              # Training loop
-├── main.py               # Entry point (dataset creation, training, fine-tuning, evaluation)
-├── requirements.txt      # Dependencies
-└── README.md             # Documentation
+# DeepRIRNet Project Structure
+
+## Overview
+
+```
+DeepRIRnet/
+├── README.md                    # Project documentation
+├── requirements.txt             # Production dependencies
+├── requirements-dev.txt         # Development dependencies
+├── config.py                   # Configuration management
+├── main.py                     # Main training script
+├── train.py                    # Training utilities
+├── utils.py                    # General utilities
+├── __init__.py                 # Package initialization
+├── data/                       # Data handling modules
+│   ├── __init__.py
+│   └── dataset.py              # Dataset implementations
+├── models/                     # Neural network models
+│   ├── __init__.py
+│   └── deep_rir_net.py        # DeepRIRNet model
+└── utils/                      # Specialized utilities
+    ├── __init__.py
+    ├── losses.py               # Loss functions
+    ├── regularizers.py         # Regularization functions
+    └── rir_generator.py        # RIR generation utilities
+```
+
+## Key Improvements Made
+
+### 1. **Configuration Management**
+- Added `config.py` with dataclass-based configuration
+- Centralized all hyperparameters and settings
+- Support for command-line argument overrides
+
+### 2. **Proper Package Structure**
+- Clean `__init__.py` files with proper exports
+- Organized imports and dependencies
+- Removed duplicate/conflicting files
+
+### 3. **Enhanced Code Quality**
+- Added comprehensive type hints
+- Improved documentation and docstrings
+- Better error handling and validation
+- Consistent coding style
+
+### 4. **Improved Dependencies**
+- Proper `requirements.txt` format
+- Separated development dependencies
+- Added optional packages for advanced features
+
+### 5. **Better Training Pipeline**
+- Enhanced training loop with progress bars
+- Proper evaluation functions
+- Checkpoint saving/loading utilities
+- Visualization functions
+
+### 6. **Modular Design**
+- Separated concerns into logical modules
+- Reusable components
+- Easy to extend and maintain
+
+## Usage
+
+### Installation
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Development Setup
+```bash
+pip install -r requirements-dev.txt
+```
+
+### Training
+```bash
+# Basic training with default configuration
+python main.py
+
+# Custom parameters
+python main.py --epochs 100 --batch-size 16 --lr 0.001 --device cuda
+
+# See all options
+python main.py --help
+```
+
+## Module Descriptions
+
+- **`config.py`**: Centralized configuration management
+- **`main.py`**: Main training script with transfer learning pipeline
+- **`train.py`**: Training and evaluation utilities
+- **`data/dataset.py`**: Dataset classes for RIR data
+- **`models/deep_rir_net.py`**: DeepRIRNet model implementation
+- **`utils/rir_generator.py`**: RIR generation using image source method
+- **`utils/losses.py`**: Hybrid loss functions with physics-informed components
+- **`utils/regularizers.py`**: Sparsity and decay regularization
+- **`utils.py`**: General utility functions

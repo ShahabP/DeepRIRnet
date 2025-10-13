@@ -1,5 +1,24 @@
-from .dataset import RIRDataset, make_dummy_dataset
-from .model import DeepRIRNet
-from .losses import compute_time_mse, compute_lsd, normalized_early_sparsity, decay_regularizer
-from .train import train_epoch, evaluate, run_pretrain_and_finetune, freeze_projection_and_first_lstm, unfreeze_all
-from .utils import set_seed, DEVICE
+"""
+DeepRIRNet: A geometry-aware Room Impulse Response prediction model.
+
+This package implements DeepRIRNet, a deep learning model for Room Impulse Response (RIR) 
+estimation using transfer learning with geometry-aware features and physics-informed losses.
+"""
+
+__version__ = "1.0.0"
+__author__ = "DeepRIRNet Team"
+
+from .config import Config, get_default_config
+from .models.deep_rir_net import DeepRIRNet
+from .data.dataset import RIRDataset
+from .utils.rir_generator import generate_dataset
+from .train import train_model
+
+__all__ = [
+    "Config",
+    "get_default_config", 
+    "DeepRIRNet",
+    "RIRDataset",
+    "generate_dataset",
+    "train_model",
+]
