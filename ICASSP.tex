@@ -385,31 +385,35 @@ Figures~\ref{fig:Train_loss}–\ref{fig:fine_tuning_loss} illustrate the trainin
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{1.png}
-\caption{Pretraining and validation loss curve on the source domain across epochs showing stable convergence.}
-\label{fig:Train_loss}
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{1.png}
+    \vspace{2pt}
+    \small (a) Source-domain pretraining loss.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{2.png}
+    \vspace{2pt}
+    \small (b) Target-domain fine-tuning loss.
+\end{minipage}
+\caption{Training dynamics: (a) stable convergence during source pretraining; (b) rapid adaptation during target fine-tuning.}
+\label{fig:train_finetune}
 \end{figure}
 
-\begin{figure}[htbp]
+
+
+\begin{figure*}[t]
 \centering
-\includegraphics[width=0.9\linewidth]{2.png}
-\caption{Fine-tuning loss curves on the target domain.}
-\label{fig:fine_tuning_loss}
-\end{figure}
-
-
-
-\begin{figure*}[t] 
-\centering
-\includegraphics[width=0.7\textwidth]{6.png}
-\caption{Comparison of RIR estimation performance across baseline and proposed methods on L-shaped and irregular target rooms. Methods compared: GAN-based RIR synthesis \cite{Ratnarajah2022GAN_RIR}, low-rank estimation \cite{Jalmby2023TASLP}, source-domain pretraining only, and the proposed transfer learning approach. Results are averaged over 3 random seeds and 20 test room configurations.}
+\includegraphics[width=0.6\textwidth]{6.png}
+\caption{Method comparison on L-shaped and irregular rooms. Baselines: GAN-based RIR \cite{Ratnarajah2022GAN_RIR}, low-rank \cite{Jalmby2023TASLP}, and source-only. Results averaged over 3 seeds and 20 test rooms.}
 \label{fig:comparison_methods}
 \end{figure*}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\linewidth]{4.png}
-\caption{LSD vs. wall reflection coefficient.}
+\includegraphics[width=0.6\linewidth]{4.png}
+\caption{LSD vs. wall reflection coefficient (lower is better).}
 \label{fig:lsd_absorption}
 \end{figure}
 
@@ -435,8 +439,8 @@ Fine-tuned  & $0.0011 \pm 0.0002$ & $1.95 \pm 0.10$ & $4.2 \pm 0.3$ \\
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=1\linewidth]{5.png}
-\caption{Comparison of three fine-tuning strategies on target domain: no fine-tuning (source-only baseline), fine-tuning only the output layer, and the proposed strategy which freezes the encoder while adapting the decoder. MSE is shown in units of $\times 10^{-3}$.}
+\includegraphics[width=0.8\linewidth]{5.png}
+\caption{Fine-tuning strategies: source-only, output-only, and proposed (freeze encoder, adapt decoder). MSE units: $\times 10^{-3}$.}
 \label{fig:comparison}
 \end{figure}
 
