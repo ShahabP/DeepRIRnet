@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/Users/shahabpasha/Desktop/DeepRIRnet/generate_paper_figures.py", line 773, in main
+    generate_figure_2_finetuning_loss(config, save_path="2.png")
+  File "/Users/shahabpasha/Desktop/DeepRIRnet/generate_paper_figures.py", line 155, in generate_figure_2_finetuning_loss
+    dataset = generate_dataset(
+  File "/Users/shahabpasha/Desktop/DeepRIRnet/utils/rir_generator.py", line 121, in generate_dataset
+    raise ValueError(f"Room type '{room_type}' not supported. Only 'rectangular' is available.")
+ValueError: Room type 'irregular' not supported. Only 'rectangular' is available.
+======================================================================
+GENERATING ALL FIGURES FOR ICASSP PAPER
+======================================================================
+
+=== Generating Figure 1: Pretraining Loss Curve ===
+Generating source domain dataset (rectangular rooms)...
+Epoch 10/50 - Train Loss: 0.744810, Val Loss: 0.067198
+Epoch 20/50 - Train Loss: 2.507818, Val Loss: 0.449120
+Epoch 30/50 - Train Loss: 1.037005, Val Loss: 0.079058
+Epoch 40/50 - Train Loss: 1.575799, Val Loss: 0.334359
+Epoch 50/50 - Train Loss: 0.261692, Val Loss: 0.126084
+✓ Figure 1 saved to 1.png
+
+=== Generating Figure 2: Fine-tuning Loss Curve ===
+Generating target domain dataset (L-shaped and irregular rooms)...
+
+✗ Error generating figures: Room type 'irregular' not supported. Only 'rectangular' is available.

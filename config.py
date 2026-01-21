@@ -432,7 +432,7 @@ class Config:
         if self.training.learning_rate > 0.01:
             issues.append("⚠️  HIGH LEARNING RATE: LR > 0.01 may cause training instability.")
             
-        if self.training.dropout > 0.5:
+        if self.model.dropout > 0.5:
             issues.append("⚠️  HIGH DROPOUT: >50% dropout may hurt model performance.")
             
         # Loss weight balance warnings
