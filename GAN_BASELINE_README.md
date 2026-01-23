@@ -301,12 +301,6 @@ All changes are **minimal and non-invasive**:
 - ✅ Consistent code style and documentation
 - ✅ Dependencies added to requirements.txt
 
-## Citation
-
-If you use this GAN baseline, please cite both:
-
-1. **This work** (DeepRIRNet paper)
-2. **Ratnarajah et al. (2022)** - "IR-GAN: Room Impulse Response Generator for Speech Augmentation"
 
 ## Questions?
 
